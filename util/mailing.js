@@ -5,7 +5,7 @@ async function sendWelcomeMail(mail){
     sgMail.setApiKey(process.env.twilioKey);
     const msg = {
       to: `${mail}`,
-      from: 'f.mateucci@somoscatus.com.ar', // Use the email address or domain you verified above
+      from: 'federicomateucci@gmail.com', // Use the email address or domain you verified above
       subject: 'Welcome to DisneyApi',
       text: 'and easy to do anywhere, even with Node.js',
       html: '<strong>and easy to do anywhere, even with Node.js</strong>',
