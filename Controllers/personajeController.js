@@ -5,21 +5,17 @@ const {
 
 } = require("../Db/mysql/conectionDb");
 
-// Query para productos por auto?
 
-// Get de los productos con el join de autos
-// async function getTrueTableProducts() {
-//    let trueList = await dbDisney.query(querys.queryAllProducts, { type: db.dbDisney.QueryTypes.SELECT });
-//    return trueList;
-// }
 
-// Get de todos los productos
+// Get de todos los personajes
 async function getAllPersonajes() {
   const personajes = await personajesModel.findAll({
     attributes: ["name", "img"],
   });
   return personajes;
 }
+
+// crear personaje asociado a pelicula
 
 async function addPersonajeAndMovie(personaje) {
   try {

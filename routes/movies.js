@@ -55,7 +55,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// POST | Agregar un producto
+// POST | Agregar una pelicula/serie
 router.post("/", async (req, res) => {
   const movie = req.body;
   try {
@@ -73,8 +73,8 @@ router.put("/:id", async (req, res) => {
   const movie = req.body;
   try {
     movie.movieId = req.params.id;
-    const result = await movieController.update(movie);
-    res.json(result);
+     await movieController.update(movie);
+    res.send("se actualizo la pelicula/serie")
   } catch (error) {
     res.status(500).json({ error: error });
   }
