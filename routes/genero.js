@@ -4,12 +4,7 @@ const generoController = require("../Controllers/generoController")
 
 
 
-// LISTAS COMPLETAS
-// Get lista completa para mostrar a clientes, con el join para mostrar el nombre de auto
-router.get("/listaCompleta", async (req, res) => {
-   const data = await generoController.getTrueTableProducts();
-   res.json(data);
-});
+
 
 // Lista detalle de genero
 router.get("/", async (req, res) => {

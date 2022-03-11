@@ -3,6 +3,7 @@ require('dotenv').config();
 
 async function sendWelcomeMail(mail){
     sgMail.setApiKey(process.env.twilioKey);
+    
     const msg = {
       to: `${mail}`,
       from: 'federicomateucci@gmail.com', // Use the email address or domain you verified above
