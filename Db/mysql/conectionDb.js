@@ -1,4 +1,4 @@
-const { type } = require("express/lib/response");
+
 const Sequelize = require("sequelize")
 const{DataTypes}=Sequelize;
 require('dotenv').config()
@@ -6,6 +6,7 @@ require('dotenv').config()
 let dbDisney = new Sequelize(process.env.DB_DATABASE,process.env.DB_USERNAME,process.env.DB_PASSWORD,{host:process.env.DB_HOST,
 dialect:"mysql"})
 
+// let dbDisney = new Sequelize("pedidos","root","Popeye101#",{host:"localhost",dialect:"mysql"})
 
 const personajesModel = dbDisney.define("personajes", {
 id: {
