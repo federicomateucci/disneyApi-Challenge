@@ -15,14 +15,14 @@ router.get("/", async (req, res) => {
         },
       });
       res.json(data);
-    } if (req.query.age) {
+    } else if (req.query.age) {
       let data = await personajesModel.findAll({
         where: {
           age: req.query.age,
         },
       });
       res.json(data);
-    } if (req.query.movies) {
+    } else if (req.query.movies) {
       let data = await personajesModel.findAll({
         where: {
           movieId: req.query.movies,
