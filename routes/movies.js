@@ -18,20 +18,17 @@ router.get("/", async (req, res) => {
         },
       });
       res.json(data);
-    } else if (req.query.idGenero) {
+    } else if (req.query.genre) {
       let data = await movieModel.findAll({
         where: {
-          generoId: req.query.idGenero,
+          generoId: req.query.genre,
         },
       });
       res.json(data);
-    } else if (req.query.order === "ASC") {
-      let data = await movieModel.findAll({order:[["date", "ASC"]]})
+    } else if (req.query.order) {
+      let data = await movieModel.findAll({order:[["date", req.query.order]]})
       res.json(data);
-    } else if (req.query.order === "DESC") {
-      let data =  await movieModel.findAll({order:[["date", "DESC"]]})
-      res.json(data);
-    } else {
+    }  else {
       const data = await movieController.getAll();
       console.log(data);
       res.json(data);

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const personajeController = require("../Controllers/personajeController");
-const { personajesModel } = require("../Db/mysql/conectionDb");
+const { personajesModel, dbDisney } = require("../Db/mysql/conectionDb");
 // LISTAS COMPLETAS
 
 
@@ -23,11 +23,10 @@ router.get("/", async (req, res) => {
       });
       res.json(data);
     } else if (req.query.movies) {
-      let data = await personajesModel.findAll({
-        where: {
-          movieId: req.query.movies,
-        },
-      });
+      let data = await dbDisney.query(`SELECT personajes.id,personajes.img as persimage, personajes.name,
+      personajes.age, personajes.weight,personajes.history FROM personajes
+      JOIN pers_moviemodels ON personaje.id = pers_moviemodels.personajeId
+      where pers_moviemodels.movieId = ${req.query.movies}`,{type:dbDisney.QueryTypes.SELECT})
       res.json(data);
     } else {
       let data = await personajeController.getAllPersonajes();
