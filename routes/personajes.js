@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     } else if (req.query.movies) {
       let data = await dbDisney.query(`SELECT personajes.id,personajes.img as persimage, personajes.name,
       personajes.age, personajes.weight,personajes.history FROM personajes
-      JOIN pers_moviemodels ON personaje.id = pers_moviemodels.personajeId
+      JOIN pers_moviemodels ON personajes.id = pers_moviemodels.personajeId
       where pers_moviemodels.movieId = ${req.query.movies}`,{type:dbDisney.QueryTypes.SELECT})
       res.json(data);
     } else {
