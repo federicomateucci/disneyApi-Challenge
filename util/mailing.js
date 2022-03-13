@@ -8,8 +8,8 @@ async function sendWelcomeMail(mail){
       to: `${mail}`,
       from: 'federicomateucci@gmail.com', // Use the email address or domain you verified above
       subject: 'Welcome to DisneyApi',
-      text: 'and easy to do anywhere, even with Node.js',
-      html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+      text: 'Hola Bienvenido a DisneyApi by Federico Mateucci, para tener acceso a todos los endpoints, deberas loguearte para obtener un Token y luego pegarlo en todos los endpoints Como Bearer Token en postman',
+      html: `<strong>Bienvenido ${mail}</strong>`,
     };
 
      try {
