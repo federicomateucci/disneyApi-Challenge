@@ -15,14 +15,14 @@ router.get("/", async (req, res) => {
         },
       });
       res.json(data);
-    } else if (req.query.age) {
+    } if (req.query.age) {
       let data = await personajesModel.findAll({
         where: {
           age: req.query.age,
         },
       });
       res.json(data);
-    } else if (req.query.movies) {
+    } if (req.query.movies) {
       let data = await personajesModel.findAll({
         where: {
           movieId: req.query.movies,
@@ -84,7 +84,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const result = await personajeController.removeById(req.params.id);
-    res.json({ mensaje: "Se elimino el producto con ID: " + result });
+    res.json({ mensaje: "Se elimino el personaje con ID: " + result });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

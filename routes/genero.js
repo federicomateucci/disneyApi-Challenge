@@ -57,7 +57,7 @@ router.put("/:id",  async (req, res) => {
    try {
       genero.generoId = req.params.id;
       const result = await generoController.update(genero);
-      res.json(result);
+      res.json("se actualizo el genero "+ result);
    } catch (error) {
       res.status(500).json({ error: error });
    }

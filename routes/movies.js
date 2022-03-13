@@ -74,7 +74,7 @@ router.put("/:id", async (req, res) => {
   try {
     movie.movieId = req.params.id;
      await movieController.update(movie);
-    res.send("se actualizo la pelicula/serie")
+    res.send("se actualizo la pelicula/serie"+ req.params.id)
   } catch (error) {
     res.status(500).json({ error: error });
   }
@@ -84,7 +84,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const result = await movieController.removeById(req.params.id);
-    res.json({ mensaje: "Se elimino la pelicula con ID: " + result });
+    res.json({ mensaje: "Se elimino la pelicula/serie con ID: " + result });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
