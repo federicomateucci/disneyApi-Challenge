@@ -1,0 +1,707 @@
+{
+	"info": {
+		"_postman_id": "fde529f2-8f6b-4764-a4f7-35fa061c8b95",
+		"name": "disneyApi-Alkemy-Federico_Mateucci",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies/Series Requests",
+			"item": [
+				{
+					"name": "Crear pelicula",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"img\": \"https://www.toystoryimage.com\",\r\n        \"title\": \"Toy Story\",\r\n        \"date\": \"20-07-1995\",\r\n        \"rating\": \"4.3\",\r\n        \"generoId\": \"1\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver Todas Las Peliculas/Series",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar pelicula /serie por nombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies?name=Toy+Story",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Toy+Story"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar peliculas/series por genero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies?idGenero=1",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "idGenero",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar peliculas por fecha ASC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies?order=ASC",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar peliculas por fecha DESC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies?order=DESC",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver detalle de pelicula/serie por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar una pelicula/serie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"img\": \"www.nuevaimagentoystory\",\r\n      \"title\": \"Toy Story\",\r\n      \"date\": \"23-07-1996\",\r\n      \"rating\": \"5\",\r\n      \"generoId\": \"1\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pelicula/serie por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/movies/id",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"username\",\r\n    \"email\":\"mail@mail.com\",\r\n    \"password\":\"mipassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"mail@mail.com\",\r\n    \"password\":\"mipassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "para ingresar con nuestro usuario a la API\r\nusaremos el mail y la password que ingresamos en la etapa de registro.\r\n{\r\n    \"email\":\"miemail@miemail.com\"\r\n    \"password\":\"mipassword\"\r\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Generos",
+			"item": [
+				{
+					"name": "Crear Genero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMDEyOTc5NjI1NjEyOGQ2ZWM2YTY1NyIsImlhdCI6MTY0NTk2NjczNCwiZXhwIjoxNjQ2NTcxNTM0fQ.5-2t39j1HU5jBBfsllgvM7nXCXJUgCbEjfv60ZeX9zg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Fantasia\",\r\n    \"img\":\"https://www.imagenfantasia.com.ar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/generos/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"generos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver todos los Generos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/generos/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"generos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Crear personaje",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"img\": \"www.reyleonimages.com/mufasa.img\",\r\n        \"name\": \"Rey Mufasa\",\r\n        \"age\": \"15\",\r\n        \"weight\": \"120.00\",\r\n        \"history\": \" es un personaje principal de la película The Lion King. Es el padre de Simba\",\r\n        \"movieId\":2\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver todos los personajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters/",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver detalle personaje por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters/5",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar personaje por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters/5",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update personaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"img\": \"www.reyleonimages.com/mufasa.img\",\r\n        \"name\": \"Rey Mufasa\",\r\n        \"age\": \"15\",\r\n        \"weight\": \"120.00\",\r\n        \"history\": \" es un personaje principal de la película The Lion King. Es el padre de Simba\",\r\n        \"movieId\":2\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters/5",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar personaje por nombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters?name=somename",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "somename"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Flitrar personaje por edad",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters?age=14",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar personajes por pelicula/serie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ZDk4Nzc4ZjU4ZWZlNzA3OWI3NCIsImlhdCI6MTY0NzAxMzM0NiwiZXhwIjoxNjQ3NjE4MTQ2fQ.fXcpX52ax2U_rqOb30QVjKpmnWhxKkB4MNd8ZrUBrkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://disneyapialkemy.herokuapp.com/characters?movies=1",
+							"protocol": "https",
+							"host": [
+								"disneyapialkemy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "movies",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
